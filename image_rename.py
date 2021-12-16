@@ -36,5 +36,5 @@ def rename(pre: int, file_path):
 
 # del_old_file()
 # copy_tree()
-# rename(0, "./rename_image/no_mask/")
-# rename(1, "./rename_image/have_mask/")
+# rename(1, "./rename_image/no_mask/")
+# rename(0, "./rename_image/have_mask/")

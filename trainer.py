@@ -97,11 +97,7 @@ def trainer():
     val_datagen = ImageDataGenerator(rescale=1.0 / 255)
 
     train_generator = train_datagen.flow_from_directory(
-        train_dir,  # This is the source directory for training images
-        target_size=(128, 128),  # All images will be resized to 150x150
-        batch_size=20,
-        # Since we use binary_crossentropy loss, we need binary labels
-        class_mode="binary",
+        train_dir, target_size=(128, 128), batch_size=20, class_mode="binary",
     )
 
     validation_generator = val_datagen.flow_from_directory(
@@ -110,12 +106,10 @@ def trainer():
 
     history = model.fit_generator(
         train_generator,
-        steps_per_epoch=int(
-            (count_have_mask + count_no_mask) / 20
-        ),  # 2000 images = batch_size * steps
+        steps_per_epoch=int((count_have_mask + count_no_mask) / 20),
         epochs=15,
         validation_data=validation_generator,
-        validation_steps=int(count_val / 20),  # 1000 images = batch_size * steps
+        validation_steps=int(count_val / 20),
         verbose=2,
     )
 
@@ -150,4 +144,4 @@ def trainer():
     evaluate_acc()
 
 
-trainer()
+# trainer()

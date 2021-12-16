@@ -5,8 +5,8 @@
 # @Author    :Miao Sun
 # @Time      :12/14/2021
 
-# 1 for masked
-# 0 for no_mask
+# 0 for masked
+# 1 for no_mask
 
 import trainer
 import image_formatter as fm
