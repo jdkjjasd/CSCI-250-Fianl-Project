@@ -1,2 +1,2 @@
-# CSCI-250-Fianl-Project
+# Face Mask Detecter
 run main.py to start project
